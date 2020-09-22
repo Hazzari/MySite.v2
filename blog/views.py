@@ -8,7 +8,7 @@ class BlogView(ListView):
     model = Post
     template_name = 'blog/blog-home.html'
     context_object_name = 'posts'
-    paginate_by = 2
+    paginate_by = 6
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)

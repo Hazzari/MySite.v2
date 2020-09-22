@@ -42,7 +42,7 @@
                                                               href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                                     </h5>
 
-                                    <p class="card-text">{{ post.content|safe|truncatewords:20 }}</p>
+                                    <p class="card-text">{{ post.content|safe|truncatewords_html:20 }}</p>
 
                                     <p class="mb-0"><a class="more-link" href="{{ post.get_absolute_url }}">Читать
                                         &rarr;</a>
@@ -50,24 +50,15 @@
 
                                 </div>
                                 <div class="card-footer">
-                                    <small class="text-muted small"> {{ post.created_at|date:'d.m.Y' }} - {{ post.author }}
+                                    <small class="text-muted small"> {{ post.created_at|date:'d.m.Y' }}
+                                        - {{ post.author }}
                                     </small>
                                 </div>
                             </div><!--//card-->
                         </div><!--//col-->
                     {% endfor %}
-
-
                 </div><!--//row-->
-
-
-                <nav class="blog-nav nav nav-justified my-5">
-                    <a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i
-                            class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-                    <a class="nav-link-next nav-item nav-link rounded" href="#">Next<i
-                            class="arrow-next fas fa-long-arrow-alt-right"></i></a>
-                </nav>
-
+                    {% include "blog/inc/_paginator.html" %}
             </div>
         </section>
 
@@ -78,6 +69,7 @@
         </footer>
 
     </div><!--//main-wrapper-->
+
 
 
 {% endblock %}

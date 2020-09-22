@@ -24,5 +24,3 @@ def resume(request):
 
 def contact(request):
     return render(request, 'home_page/contact.html')
-
-

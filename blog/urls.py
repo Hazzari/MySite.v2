@@ -23,6 +23,6 @@ urlpatterns = [
     path('', BlogView.as_view(), name='blog'),
     path('category/<str:slug>/', get_category, name='category'),
     # path('post-detail/<str:slug>/', post_detail, name='post_detail'),
-    path('post/', BlogPostView.as_view(), name='post'),
+    path('post/<str:slug>/', BlogPostView.as_view(), name='post'),
 
 ]

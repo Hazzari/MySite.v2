@@ -1,0 +1,76 @@
+{% load static %}
+{% load cache %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script src="{% static 'assets/plugins/jquery-3.4.1.min.js' %}"></script>
+
+    <title>
+        {% block title %}Мой сайт{% endblock %}
+    </title>
+
+    {% cache 20 meta %}
+        {% include "inc/_meta.html" %}
+    {% endcache %}
+
+</head>
+<body class="dark-mode">
+
+<header class="header text-center">
+    <div class="force-overflow">
+        <h1 class="blog-name pt-lg-4 mb-0"><a href="{% url 'home_page:index' %}">Дробро пожаловать!</a></h1>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                    aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navigation" class="collapse navbar-collapse flex-column">
+
+                <div class="profile-section pt-3 pt-lg-0">
+
+                    {% cache 60 navigation %}
+
+                        <img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'images/my_photo.png' %}"
+                             alt="portrait">
+
+                        <div class="bio mb-3">
+                            <p style="white-space: pre-line">Спасибо что заглянули на мою страничку!
+
+                                Меня зовут Аллександр.
+                                Я web разработчик.
+                                Работаю в IT более 20 лет.
+                            </p>
+                        </div>
+                    {% endcache %}
+
+                    {% include "inc/_social_icon_portfolio.html" %}
+                </div>
+
+                {% include "inc/_nav.html" %}
+                <!--//dark-mode-toggle-->
+                {#                {% include "inc/_dark_mode_button.html" %}#}
+                <!--//dark-mode-toggle-->
+            </div>
+
+
+        </nav>
+    </div><!--//force-overflow-->
+</header>
+
+{% block content %}
+    <h1> OVERRIDE ME!!!</h1>
+{% endblock %}
+
+{% cache 20 footer %}
+    {% include "inc/_footer.html" %}
+{% endcache %}
+
+<!--Page Specific JS -->
+{#<script type="text/javascript" src="{% static 'assets/plugins/imagesloaded.pkgd.min.js' %}"></script>#}
+
+
+</body>
+
+</html>
+

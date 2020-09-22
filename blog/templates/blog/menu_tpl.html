@@ -1,0 +1,8 @@
+<div class="blog-menu">
+    <div id='blog-menu' class="filters mb-5 mx-auto pl-0">
+        <a class="type mb-3 mb-lg-0" href="{% url 'blog:blog' %}">Все</a>
+        {% for item in categories %}
+            <a class="type mb-3 mb-lg-0" href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+        {% endfor %}
+    </div>
+</div>

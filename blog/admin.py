@@ -26,9 +26,9 @@ class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     list_display_links = ('id', 'title',)
     search_fields = ('title', 'content')
-    empty_value_display = '-empty-'
-
-    fields = ('get_photo', 'title', 'slug', 'author', 'content', 'created_at', 'photo', 'views', 'category')
+    # empty_value_display = '-empty-'
+    list_filter = ('category', 'tags')
+    fields = ('get_photo', 'title', 'slug', 'author', 'content', 'created_at', 'photo', 'views', 'category', 'tags')
     readonly_fields = ('get_photo', 'views', 'created_at',)
 
     form = PostAdminForm

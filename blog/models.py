@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from django.utils import timezone
 
 
 class Category(models.Model):
@@ -22,10 +21,12 @@ class Category(models.Model):
 class Tag(models.Model):
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=250, unique=True)
-    publish = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse('blog:tag', kwargs={"slug": self.slug})
 
     class Meta:
         verbose_name = 'Тег'

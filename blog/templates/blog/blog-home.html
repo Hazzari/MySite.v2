@@ -4,77 +4,31 @@
 {% load menu %}
 {% block title %} {{ title }} :: {{ block.super }} {% endblock %}
 {% block content %}
-    <div class="main-wrapper">
+    <div class="main-wrapper ">
         <section class="cta-section theme-bg-light py-5">
             <div class="container text-center">
                 {% show_menu %}
                 <h2 class="heading">A Blog About Software Development And Life</h2>
-                <div class="intro">Welcome to my blog. Subscribe and get my latest blog post in your inbox.</div>
                 <form class="signup-form form-inline justify-content-center pt-3">
                     <div class="form-group">
-                        <label class="sr-only" for="semail">Your email</label>
-                        <input type="email" id="semail" name="semail1" class="form-control mr-md-1 semail"
-                               placeholder="Enter email">
+                        <label class="sr-only" for="search">Поиск</label>
+                        <input type="search" id="search" name="search" class="form-control mr-md-1 search"
+                               placeholder="поиск">
                     </div>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                    <button type="submit" class="btn btn-primary">Поиск</button>
                 </form>
             </div><!--//container-->
         </section>
 
 
-        <section class="blog-list px-3 py-5 p-md-5">
-            <div class="container">
-                <div class="row">
-                    {% for post in posts %}
+        {% include "blog/blog-list-content.html" %}
 
 
-                        <div class="col-md-4 mb-3">
-                            <div class="card blog-post-card">
-                                {% if post.photo %}
-                                    <img class="card-img-top" src="{{ post.photo.url }}" alt="{{ post.title }}">
-                                {% else %}
-                                    <img class="card-img-top" src="https://picsum.photos/id/1060//250/200/?blur"
-                                         alt="post image">
-                                {% endif %}
-                                <div class="card-body">
-
-                                    <h5 class="card-title"><a class="theme-link"
-                                                              href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-                                    </h5>
-
-                                    <p class="card-text">{{ post.content|safe|truncatewords_html:20 }}</p>
-
-                                    <p class="mb-0"><a class="more-link" href="{{ post.get_absolute_url }}">Читать
-                                        &rarr;</a>
-                                    </p>
-
-                                </div>
-                                <div class="card-footer">
-                                    <small class="text-muted small"> {{ post.created_at|date:'d.m.Y' }}
-                                        - {{ post.author }}
-                                    </small>
-                                </div>
-                            </div><!--//card-->
-                        </div><!--//col-->
-                    {% endfor %}
-                </div><!--//row-->
-                    {% include "blog/inc/_paginator.html" %}
-            </div>
-        </section>
-
-
+        <div class="justify-content-center">{% include "blog/inc/_paginator.html" %}</div>
         <footer class="footer text-center py-4">
             <small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/"
                                                                   target="_blank">3rd Wave Media</a></small>
         </footer>
-
-    </div><!--//main-wrapper-->
-
-
-
+    </div>
 {% endblock %}
-
-
-
-
 

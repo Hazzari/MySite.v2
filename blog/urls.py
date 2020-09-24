@@ -19,10 +19,13 @@ from .views import *
 
 app_name = 'blog'
 
+
+
+
 urlpatterns = [
     path('', BlogView.as_view(), name='blog'),
-    path('category/<str:slug>/', get_category, name='category'),
-    # path('post-detail/<str:slug>/', post_detail, name='post_detail'),
+    path('category/<str:slug>/', PostByCategoryView.as_view(), name='category'),
+    path('tag/<str:slug>/', PostByTagView.as_view(), name='tag'),
     path('post/<str:slug>/', BlogPostView.as_view(), name='post'),
 
 ]

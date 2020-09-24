@@ -19,9 +19,6 @@ from .views import *
 
 app_name = 'blog'
 
-
-
-
 urlpatterns = [
     path('', BlogView.as_view(), name='blog'),
     path('category/<str:slug>/', PostByCategoryView.as_view(), name='category'),

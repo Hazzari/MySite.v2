@@ -1,4 +1,4 @@
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView
 from django.db.models import F
 
 from blog.models import Post, Category, Tag
@@ -20,7 +20,7 @@ class PostByCategoryView(ListView):
     template_name = 'blog/blog-home.html'
     context_object_name = 'posts'
     paginate_by = 6
-    allow_empty = False
+    allow_empty = False  # 404 на несуществующий обьект вместо ошибки сервера
 
     def get_queryset(self):
         return Post.objects.filter(category__slug=self.kwargs['slug'])
@@ -35,7 +35,7 @@ class PostByTagView(ListView):
     template_name = 'blog/blog-home.html'
     context_object_name = 'posts'
     paginate_by = 6
-    allow_empty = False
+    allow_empty = False  # 404 на несуществующий обьект вместо ошибки сервера
 
     def get_queryset(self):
         return Post.objects.filter(tags__slug=self.kwargs['slug'])
@@ -46,7 +46,6 @@ class PostByTagView(ListView):
         return context
 
 
-# TODO: Поменять на DetailView
 class BlogPostView(DetailView):
     model = Post
     template_name = 'blog/blog-post.html'

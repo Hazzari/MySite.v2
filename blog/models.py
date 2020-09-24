@@ -3,6 +3,9 @@ from django.urls import reverse
 
 
 class Category(models.Model):
+    """
+    Категория постов записей блога
+    """
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=250, unique=True)
 
@@ -19,6 +22,9 @@ class Category(models.Model):
 
 
 class Tag(models.Model):
+    """
+    Теги постов записей блога
+    """
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=250, unique=True)
 
@@ -35,6 +41,9 @@ class Tag(models.Model):
 
 
 class Post(models.Model):
+    """
+    Посты блога
+    """
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=150, verbose_name='Url', unique=True)
     author = models.CharField(max_length=100)

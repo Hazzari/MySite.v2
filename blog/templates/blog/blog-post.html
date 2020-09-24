@@ -3,45 +3,36 @@
 
 
 {% block container_content %}
-        <article class="blog-post px-3">
-            <div class="container single-col-max-width">
-                <header class="blog-post-header">
-                    <h2 class="title mb-2">{{ post.title }}</h2>
-                    <div class="meta mb-3">
-                        <span class="date">{{ post.created_at }}</span>
-                        <span class="date"><a
-                                href="{{ post.category.get_absolute_url }}">{{ post.category }}</a></span>
-                        <span class="comment">Кол-во просмотров: {{ post.views }}</span>
-                    </div>
-                </header>
-            </div>
-
-
-            <div class="blog-post-body">
-                {% if post.photo %}
-                    <figure class="blog-banner"><img class="img-fluid" src="{{ post.photo.url }}"
-                                                     alt="{{ post.title }}">
-
-                        {% comment %}
-                            	# TODO: error
-
+    <article class="blog-post px-3">
+        <div class="container single-col-max-width">
+            <header class="blog-post-header">
+                <h2 class="title mb-2">{{ post.title }}</h2>
+                <div class="meta mb-3">
+                    <span class="date">{{ post.created_at }}</span>
+                    <span class="date"><a
+                            href="{{ post.category.get_absolute_url }}">{{ post.category }}</a></span>
+                    <span class="comment">Кол-во просмотров: {{ post.views }}</span>
+                </div>
+            </header>
+        </div>
+        <div class="blog-post-body">
+            {% if post.photo %}
+                <figure class="blog-banner"><img class="img-fluid" src="{{ post.photo.url }}"
+                                                 alt="{{ post.title }}">
+                    {% comment %}
                             <figcaption class="mt-2 text-center image-caption">Image Credit: <a
                                     href="#" target="_blank">пояснение? прик</a></figcaption>
                             {% endcomment %}
-
-                    </figure>
-
-                {% endif %}
-                <!--TAG-->
-                {% include "blog/inc/_tags.html" %}
-                <!--//TAG-->                <!--Body post-->
-                {{ post.content|safe }}
-                <!--//Body post-->
-            </div>
-
-
-        </article>
-        {% comment %}
+                </figure>
+            {% endif %}
+            <!--TAG-->
+            {% include "blog/inc/_tags.html" %}
+            <!--//TAG-->                <!--Body post-->
+            {{ post.content|safe }}
+            <!--//Body post-->
+        </div>
+    </article>
+    {% comment %}
             {% include "blog/inc/_promo.html" %}
         {% endcomment %}
 {% endblock %}

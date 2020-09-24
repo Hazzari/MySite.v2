@@ -20,9 +20,9 @@
             </div><!--//container-->
         </section>
 
-        <div class="container pl-5">
+        <div class="container-fluid pl-5 ">
             <div class="row">
-                <div class="col col-lg-9 col-md-12 col-sm-12">
+                <div class="col col-lg col-md-12 col-sm-12">
                     {% block container_content %}
                         {% include "blog/blog-list-content.html" %}
                     {% endblock %}
@@ -30,16 +30,8 @@
                 </div>
 
 
-                <div class="col-lg d-none d-lg-block">
-                    <div class="blog-right-menu">
-                        {% block container_right_content %}
-                            . Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.Lorem ipsum dolor
-                            . Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.Lorem ipsum dolor
-                            . Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.Lorem ipsum dolor
-                            . Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.Lorem ipsum dolor
-                        {% endblock %}
-
-                    </div>
+                <div class="col-lg d-none d-lg-block col-lg-auto">
+                    {% include "blog/inc/_right_menu.html" %}
 
 
                 </div>

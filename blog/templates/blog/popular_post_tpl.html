@@ -1,9 +1,9 @@
-<div class="popular-posts">
-    <h2 class="text-center">Popular posts</h2>
+<div class="popular-posts  p-2">
+    <h3 class="text-center border rounded border-secondary blog-tags-and-posts-menu">Popular posts</h3>
     {% for post in posts %}
         <a href="{{ post.get_absolute_url }}">
             {% if post.photo %}
-                <img class="card-img-top" src="{{ post.photo.url }}" alt="{{ post.title }}">
+                <img class="card-img-top  p-2" src="{{ post.photo.url }}" alt="{{ post.title }}">
             {% else %}
                 <img class="card-img-top" src="https://picsum.photos/id/1060//250/200/?blur" alt="post image">
             {% endif %}

@@ -31,18 +31,7 @@
                 <div class="profile-section pt-3 pt-lg-0">
 
                     {% cache 60 navigation %}
-
-                        <img class="profile-image mb-3 rounded-circle mx-auto" src="{% static 'images/my_photo.png' %}"
-                             alt="portrait">
-
-                        <div class="bio mb-3">
-                            <p style="white-space: pre-line">Спасибо что заглянули на мою страничку!
-
-                                Меня зовут Аллександр.
-                                Я web разработчик.
-                                Работаю в IT более 20 лет.
-                            </p>
-                        </div>
+                        {% include "inc/bio_menu.html" %}
                     {% endcache %}
 
                     {% include "inc/_social_icon_portfolio.html" %}

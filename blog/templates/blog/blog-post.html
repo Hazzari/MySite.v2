@@ -1,5 +1,6 @@
 {% extends "blog/blog-home.html" %}
 {% load static %}
+{% block title %} {{ post.title }} {{ block.super }} {% endblock %}
 
 
 {% block container_content %}
@@ -26,7 +27,7 @@
                 </figure>
             {% endif %}
             <!--TAG-->
-            {% include "blog/inc/_tags.html" %}
+            {% include "blog/inc/_tags_detail_post.html" %}
             <!--//TAG-->                <!--Body post-->
             {{ post.content|safe }}
             <!--//Body post-->

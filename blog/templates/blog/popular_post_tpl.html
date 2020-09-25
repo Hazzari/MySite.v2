@@ -1,5 +1,5 @@
-<h2 class="text-center">Popular posts</h2>
-<div class="text-left">
+<div class="popular-posts">
+    <h2 class="text-center">Popular posts</h2>
     {% for post in posts %}
         <a href="{{ post.get_absolute_url }}">
             {% if post.photo %}
@@ -10,7 +10,7 @@
         </a>
         <div>
             <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-            <small><p>By {{ post.author }} - {{ post.created_at|date:'d.m.Y' }}</p></small>
+            <small>By {{ post.author }} - {{ post.created_at|date:'d.m.Y' }}</small>
         </div>
     {% endfor %}
 </div>

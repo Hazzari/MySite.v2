@@ -1,7 +1,6 @@
 {% extends "blog/blog-base.html" %}
 {% load static %}
 {% load sidebar %}
-
 {% load menu %}
 {% block title %} {{ title }} :: {{ block.super }} {% endblock %}
 {% block content %}
@@ -11,12 +10,13 @@
                 {% show_menu %}
                 <h2 class="heading">A Blog About Software Development And Life</h2>
                 <form class="signup-form form-inline justify-content-center pt-3">
-                    <div class="form-group">
-                        <label class="sr-only" for="search">Поиск</label>
-                        <input type="search" id="search" name="search" class="form-control mr-md-1 search"
-                               placeholder="поиск">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control"
+                               aria-label="search" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn  btn-primary" type="button" id="button-addon2">Найти</button>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Поиск</button>
                 </form>
             </div><!--//container-->
         </section>
@@ -29,6 +29,7 @@
                 </div>
                 <div class="col-lg-3 d-none d-lg-block col-lg-auto">
                     {% get_popular object.slug 3 %}
+                    {% get_tags %}
                 </div>
             </div>
         </div>
@@ -37,6 +38,8 @@
             <small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/"
                                                                   target="_blank">3rd Wave Media</a></small>
         </footer>
+
     </div>
+
 {% endblock %}
 

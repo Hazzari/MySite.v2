@@ -10,22 +10,22 @@
 {#    <li class="nav-item {% if request.path == '/contact/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:contact' %}"><i class="fas fa-envelope-open-text fa-fw mr-2"></i>Contact</a></li>#}
     <li class="nav-item {% if '/blog/' in request.path %}active{% endif %}"><a class="nav-link" href="{% url 'blog:blog' %}"><i class="fas fa-blog fa-fw mr-2"></i>Blog</a></li>
 
-    {#    <li class="nav-item dropdown">#}
-    {#        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"#}
-    {#           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-    {#            <i class="fas fa-cogs fa-fw mr-2"></i>Blog#}
-    {#        </a>#}
-    {#        <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
-    {#            <a class="dropdown-item" href="{% url 'blog' %}">Project Page</a>#}
-    {#            <a class="dropdown-item" href="blog-home.html">Blog Home 1</a>#}
-    {#            <a class="dropdown-item" href="blog-home-alt.html">Blog Home 2</a>#}
-    {#            <a class="dropdown-item" href="blog-post.html">Blog Post</a>#}
-    {#        </div>#}
-    {#    </li>#}
-    {#        {% endcomment %}#}
+{#        <li class="nav-item dropdown">#}
+{#            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"#}
+{#               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                <i class="fas fa-cogs fa-fw mr-2"></i>Blog#}
+{#            </a>#}
+{#            <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+{#                <a class="dropdown-item" href="{% url 'blog' %}">Project Page</a>#}
+{#                <a class="dropdown-item" href="blog-home.html">Blog Home 1</a>#}
+{#                <a class="dropdown-item" href="blog-home-alt.html">Blog Home 2</a>#}
+{#                <a class="dropdown-item" href="blog-post.html">Blog Post</a>#}
+{#            </div>#}
+{#        </li>#}
 
 
 {## TODO: Удалить!!!#}
+{#    <li class="nav-item"><a class="nav-link" href="{% url 'admin' %}">Админка</a></li>#}
     <li class="nav-item"><a class="nav-link" href="/admin/">Админка</a></li>
 
 </ul>

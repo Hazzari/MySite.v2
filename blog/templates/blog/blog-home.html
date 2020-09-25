@@ -4,20 +4,25 @@
 {% load menu %}
 {% block title %} {{ title }} :: {{ block.super }} {% endblock %}
 {% block content %}
+    <script src="{% static 'blog/js/clear_form.js' %}"></script>
+    <script src="{% static 'blog/js/switch_active_menu.js' %}"></script>
+
     <div class="main-wrapper ">
+
         <section class="cta-section theme-bg-light py-5">
             <div class="container text-center">
                 {% show_menu %}
-                <h2 class="heading">A Blog About Software Development And Life</h2>
-                <form class="signup-form form-inline justify-content-center pt-3">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control"
-                               aria-label="search" aria-describedby="button-addon2">
+                <h2 class="heading">Блог о разработке и жизни</h2>
+                <!--Search-->
+                <form action="{% url 'blog:search' %}" method="get">
+                    <div class="input-group mb-3 justify-content-md-center ">
+                        <input type="text" class="form-control col-lg-6 " name="search_content" placeholder="Найти"
+                               aria-label="Recipient's username" aria-describedby="button-addon2">
                         <div class="input-group-append">
-                            <button class="btn  btn-primary" type="button" id="button-addon2">Найти</button>
+                            <button class="btn btn-outline-primary" id="button-addon2">Кнопка</button>
                         </div>
                     </div>
-                </form>
+                </form><!--Search-->
             </div><!--//container-->
         </section>
         <div class="container-fluid pl-5 ">

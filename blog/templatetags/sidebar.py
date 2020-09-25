@@ -10,7 +10,6 @@ def get_popular(name_post: str, cnt=3) -> dict:
     """
     показываем популярные статьи за исключением открытой
     """
-    print(f'name_post = {name_post}')
     posts = Post.objects.order_by('-views').exclude(slug__exact=name_post)[:cnt]
     return {'posts': posts}
 

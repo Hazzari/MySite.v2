@@ -29,7 +29,14 @@
             <div class="row">
                 <div class="col col-lg-9 col-md-12 col-sm-12">
                     {% block container_content %}
-                        {% include "blog/blog-list-content.html" %}
+                        {% if posts %}
+                            {% include "blog/blog-list-content.html" %}
+                        {% else %}
+                            <div class="col-auto text-center mt5 pt-5">
+                            <p class="display-4 ">Статей не найдено!</p>
+                            </div>
+                        {% endif %}
+
                     {% endblock %}
                 </div>
                 <div class="col-lg-3 d-none d-lg-block col-lg-auto">

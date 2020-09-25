@@ -16,7 +16,7 @@
                                                                          href="?page={{ p }}">{{ p }}<span
                             class="sr-only">(current)</span></a></li>
                 {% elif p > page_obj.number|add:-3 and p < page_obj.number|add:3 %}
-                    <li class="page-item"><a class="blog-paginator" href="?page={{ p }}">{{ p }}</a></li>
+                    <li class="page-item"><a class="blog-paginator" href="?{{ search_content }}page={{ p }}">{{ p }}</a></li>
                 {% endif %}
             {% endfor %}
             {% if not page_obj.has_next %}
@@ -24,7 +24,7 @@
                 </li>
             {% else %}
                 <li class="page-item"><a class="blog-paginator"
-                                         href="?page={{ page_obj.paginator.num_pages }}">Конец</a>
+                                         href="?{{ search_content }}page={{ page_obj.paginator.num_pages }}">Конец</a>
                 </li>
             {% endif %}
         </ul>

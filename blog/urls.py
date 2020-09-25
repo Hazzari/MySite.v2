@@ -21,6 +21,7 @@ app_name = 'blog'
 
 urlpatterns = [
     path('', BlogView.as_view(), name='blog'),
+    path('search/', SearchView.as_view(), name='search'),
     path('category/<str:slug>/', PostByCategoryView.as_view(), name='category'),
     path('tag/<str:slug>/', PostByTagView.as_view(), name='tag'),
     path('post/<str:slug>/', BlogPostView.as_view(), name='post'),

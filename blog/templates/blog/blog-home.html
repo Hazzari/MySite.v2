@@ -1,5 +1,6 @@
 {% extends "blog/blog-base.html" %}
 {% load static %}
+{% load sidebar %}
 
 {% load menu %}
 {% block title %} {{ title }} :: {{ block.super }} {% endblock %}
@@ -19,28 +20,18 @@
                 </form>
             </div><!--//container-->
         </section>
-
         <div class="container-fluid pl-5 ">
             <div class="row">
-                <div class="col col-lg col-md-12 col-sm-12">
+                <div class="col col-lg-9 col-md-12 col-sm-12">
                     {% block container_content %}
                         {% include "blog/blog-list-content.html" %}
                     {% endblock %}
-
                 </div>
-
-
-                <div class="col-lg d-none d-lg-block col-lg-auto">
-                    {% include "blog/inc/_right_menu.html" %}
-
-
+                <div class="col-lg-3 d-none d-lg-block col-lg-auto">
+                    {% get_popular object.slug 3 %}
                 </div>
-
-
             </div>
         </div>
-
-
         <div class="justify-content-center">{% include "blog/inc/_paginator.html" %}</div>
         <footer class="footer text-center py-4">
             <small class="copyright">Template Copyright &copy; <a href="https://themes.3rdwavemedia.com/"

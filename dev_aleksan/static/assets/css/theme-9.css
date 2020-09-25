@@ -4809,6 +4809,26 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
     border: 1px solid #a9a9a9
 }
 
+.blog-paginator {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #D67553;
+    background-color: #131E2A;
+    border: 1px solid #a9a9a9
+}
+
+.blog-paginator.disabled {
+    color: #767676;
+    pointer-events: none;
+    cursor: auto;
+    background-color: #131E2A;
+    border-color: #a9a9a9
+}
+
+
 .page-link:hover {
     z-index: 2;
     color: #b24e2a;

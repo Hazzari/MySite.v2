@@ -44,15 +44,22 @@ class Post(models.Model):
     """
     Посты блога
     """
+    STATUS_CHOICES = (
+        ('draft', 'Черновик'),
+        ('published', 'Опубликована'),
+    )
+
     title = models.CharField(max_length=150)
     slug = models.SlugField(max_length=150, verbose_name='Url', unique=True)
     author = models.CharField(max_length=100)
     content = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Опубликованно')
     photo = models.ImageField(upload_to='photo/%Y/%m/%/', blank=True)
-    views = models.IntegerField(default=0, verbose_name='Количество просмотров')
+    views = models.IntegerField(default=0, verbose_name='Просмотры')
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='posts', )
     tags = models.ManyToManyField(to=Tag, related_name='posts', blank=True)
+    is_published = models.BooleanField(default=True, verbose_name='Статус', )
+    status = models.CharField(choices=STATUS_CHOICES, max_length=50, default='draft', )
 
     def get_absolute_url(self):
         return reverse('blog:post', kwargs={"slug": self.slug})

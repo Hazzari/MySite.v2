@@ -3,7 +3,7 @@
     {% for post in posts %}
         <a href="{{ post.get_absolute_url }}">
             {% if post.photo %}
-                <img class="card-img-top  p-2" src="{{ post.photo.url }}" alt="{{ post.title }}">
+                <img class="card-img-top p-2" src="{{ post.photo.url }}" alt="{{ post.title }}" >
             {% else %}
                 <img class="card-img-top" src="https://picsum.photos/id/1060//250/200/?blur" alt="post image">
             {% endif %}

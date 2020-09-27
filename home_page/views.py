@@ -10,7 +10,6 @@ def index(request):
 
 
 def portfolio(request):
-    # pprint(request.__dict__)
     return render(request, 'home_page/portfolio.html')
 
 

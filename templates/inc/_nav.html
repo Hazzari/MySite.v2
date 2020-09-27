@@ -1,52 +1,10 @@
 {% load static %}
-
-{## FIXME: Сделать меню в цикле for #}
-
 <ul class="navbar-nav flex-column text-left">
-    <li class="nav-item {% if request.path == '/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:index' %}"><i class="fas fa-user fa-fw mr-2"></i> {{ pages }} About Me</a></li>
-{#    <li class="nav-item {% if request.path == '/portfolio/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:portfolio' %}"><i class="fas fa-laptop-code fa-fw mr-2"></i>Portfolio</a></li>#}
-{#    <li class="nav-item {% if request.path == '/services/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:services' %}"><i class="fas fa-briefcase fa-fw mr-2"></i>Services&amp; Pricing</a></li>#}
-{#    <li class="nav-item {% if request.path == '/resume/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:resume' %}"><i class="fas fa-file-alt fa-fw mr-2"></i>Resume</a></li>#}
-{#    <li class="nav-item {% if request.path == '/contact/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:contact' %}"><i class="fas fa-envelope-open-text fa-fw mr-2"></i>Contact</a></li>#}
-    <li class="nav-item {% if '/blog/' in request.path %}active{% endif %}"><a class="nav-link" href="{% url 'blog:blog' %}"><i class="fas fa-blog fa-fw mr-2"></i>Blog</a></li>
-
-{#        <li class="nav-item dropdown">#}
-{#            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"#}
-{#               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
-{#                <i class="fas fa-cogs fa-fw mr-2"></i>Blog#}
-{#            </a>#}
-{#            <div class="dropdown-menu" aria-labelledby="navbarDropdown">#}
-{#                <a class="dropdown-item" href="{% url 'blog' %}">Project Page</a>#}
-{#                <a class="dropdown-item" href="blog-home.html">Blog Home 1</a>#}
-{#                <a class="dropdown-item" href="blog-home-alt.html">Blog Home 2</a>#}
-{#                <a class="dropdown-item" href="blog-post.html">Blog Post</a>#}
-{#            </div>#}
-{#        </li>#}
-
-
-{## TODO: Удалить!!!#}
-{#    <li class="nav-item"><a class="nav-link" href="{% url 'admin' %}">Админка</a></li>#}
-    <li class="nav-item"><a class="nav-link" href="/admin/">Админка</a></li>
-
+    <li class="nav-item {% if request.path == '/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:index' %}"><i class="fas fa-user fa-fw mr-2"></i> {{ pages }} Обо мне</a></li>
+    {#    <li class="nav-item {% if request.path == '/portfolio/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:portfolio' %}"><i class="fas fa-laptop-code fa-fw mr-2"></i>Portfolio</a></li>#}
+    {#    <li class="nav-item {% if request.path == '/services/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:services' %}"><i class="fas fa-briefcase fa-fw mr-2"></i>Services&amp; Pricing</a></li>#}
+    <li class="nav-item {% if request.path == '/resume/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:resume' %}"><i class="fas fa-file-alt fa-fw mr-2"></i>Резюме</a></li>
+{#    <li class="nav-item {% if request.path == '/contact/' %}active{% endif %}"><a class="nav-link" href="{% url 'home_page:contact' %}"><i class="fas fa-envelope-open-text fa-fw mr-2"></i>Контакты</a></li>#}
+    <li class="nav-item {% if '/blog/' in request.path %}active{% endif %}"><a class="nav-link" href="{% url 'blog:blog' %}"><i class="fas fa-blog fa-fw mr-2"></i>Блог</a></li>
 </ul>
-
-
-
-{% comment %}
-
-// Тож самое можно сделать с помощью JS
-
-	$(document).ready(function () {
-    $('#blog-menu a').each(function () {
-        let location = window.location.protocol + '//' + window.location.host + window.location.pathname;
-        let link = this.href;
-        if (location === link) {
-            $(this).addClass('active');
-        }
-    });
-});
-
-{% endcomment %}
-
-
 

@@ -7,24 +7,30 @@
         <section class="cta-section theme-bg-light py-5">
             <div class="container text-center single-col-max-width">
                 <h2 class="heading mb-3">Online резюме</h2>
-                <a class="btn btn-primary" href="#" target="_blank"><i class="fas fa-file-pdf mr-2"></i>Скачать PDF версию</a>
+                <a class="btn btn-primary" href="#" target="_blank"><i class="fas fa-file-pdf mr-2"></i>Скачать PDF
+                    версию</a>
             </div><!--//container-->
         </section>
         <div class="container px-3 px-lg-5">
             <article class="resume-wrapper mx-auto theme-bg-light p-5 mb-5 my-5 shadow-lg">
                 <div class="resume-header">
                     <div class="row align-items-center">
-                        <div class="resume-title col-12 col-md-6 col-lg-8 col-xl-9">
-                            <h2 class="resume-name mb-0 text-uppercase">Python разработчик</h2>
+                        <div class="d-none d-sm-block">
+                            <h2 class="resume-name mb-0 text-uppercase">Разработчик Python</h2>
+                        </div>
+                        <div class="d-sm-none">
+                            <h2 class="text-uppercase">Разработчик Python</h2>
+                        </div>
+
+                        <div class="resume-title d-none d-md-block col-12 col-md-6 col-lg-8 col-xl-9">
                             <div class="resume-tagline mb-3 mb-md-0">Петрушкин Александр</div>
                         </div><!--//resume-title-->
                         <div class="resume-contact col-12 col-md-6 col-lg-4 col-xl-3">
                             <ul class="list-unstyled mb-0">
-                                {#                                <li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a#}
-                                {#                                        class="resume-link" href="tel:#">+7 926 365 9499</a></li>#}
+                                <li class="mb-2"><i class="fas fa-phone-square fa-fw fa-lg mr-2 "></i><a
+                                        class="resume-link" href="tel:#">+7 926 365 9499</a></li>
                                 <li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><a
                                         class="resume-link" href="mailto:#">free2mmm@gmail.com</a></li>
-                                {#                                <li class="mb-2"><i class="fas fa-globe fa-fw fa-lg mr-2"></i><a class="resume-link" href="#">aleksan.site</a></li>#}
                                 <li class="mb-0"><i class="fas fa-map-marker-alt fa-fw fa-lg mr-2"></i>Москва/Одинцово
                                 </li>
                             </ul>
@@ -39,7 +45,9 @@
                             <p class="mb-0 ">
                                 Ищу работу в удаленном формате, с посещением офиса 1-2 раза в неделю.
                                 Работаю в сфере IT больше 15 лет.
-                                а это время успел поработать в разных областях эникеем, инженером техподдержки, выездным мастером, системным администратором.  Настраивал телефонии, протягивал километры проводов, оборудовал серверные комнаты.
+                                а это время успел поработать в разных областях эникеем, инженером техподдержки, выездным
+                                мастером, системным администратором. Настраивал телефонии, протягивал километры
+                                проводов, оборудовал серверные комнаты.
                                 В 2015 сменил сферу в направлении программирования.
                             </p>
                         </div><!--//media-body-->
@@ -53,7 +61,7 @@
                             {% include "home_page/inc/resume/_work_experience.html" %}
                             <!--//Опыт работы-->
                             <!--Проекты-->
-{#                            {% include "home_page/inc/resume/_project.html" %}#}
+                            {#                            {% include "home_page/inc/resume/_project.html" %}#}
                             <!--//Проекты-->
 
                         </div><!--//resume-main-->
@@ -63,8 +71,14 @@
                 <hr>
                 <div class="resume-footer text-center">
                     <ul class="resume-social-list list-inline mx-auto mb-0 d-inline-block text-muted">
-                        <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="http://github.com/Hazzari"><i class="fab fa-github-square fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">Aleksan</span></a></li>
-                        <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link" href="https://www.linkedin.com/in/александр-петрушкин-773baa83/"><i class="fab fa-linkedin fa-2x mr-2" data-fa-transform="down-4"></i><span class="d-none d-lg-inline-block text-muted">Александр</span></a></li>
+                        <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link"
+                                                                     href="http://github.com/Hazzari"><i
+                                class="fab fa-github-square fa-2x mr-2" data-fa-transform="down-4"></i><span
+                                class="d-none d-lg-inline-block text-muted">Aleksan</span></a></li>
+                        <li class="list-inline-item mb-lg-0 mr-3"><a class="resume-link"
+                                                                     href="https://www.linkedin.com/in/александр-петрушкин-773baa83/"><i
+                                class="fab fa-linkedin fa-2x mr-2" data-fa-transform="down-4"></i><span
+                                class="d-none d-lg-inline-block text-muted">Александр</span></a></li>
                     </ul>
                 </div><!--//resume-footer-->
             </article>

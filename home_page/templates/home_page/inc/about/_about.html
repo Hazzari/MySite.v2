@@ -10,16 +10,20 @@
                         Добро пожаловать ко мне на страницу.
 
                         Я являюсь Python разработчиком.
+
+                        Сейчас сайт находится в активной стадии разработки!
+
+                        Страница с резюме готова!
                     </p>
 
                 </div><!--//bio-->
                 <div class="mb-4">
-                    <a class="btn btn-primary mr-2 mb-3" href="portfolio.html"><i
-                            class="fas fa-arrow-alt-circle-right mr-2"></i><span
-                            class="d-none d-md-inline">View</span> Portfolio</a>
-                    <a class="btn btn-secondary mb-3" href="resume.html"><i
-                            class="fas fa-file-alt mr-2"></i><span
-                            class="d-none d-md-inline">View</span> Resume</a>
+{#                    <a class="btn btn-primary mr-2 mb-3" href="#">#}
+{#                        <i class="fas fa-arrow-alt-circle-right mr-2"></i>#}
+{#                        <span class="d-none d-md-inline">View</span> Portfolio</a>#}
+                    <a class="btn btn-secondary mb-3" href="{% url 'home_page:resume' %}">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        <span class="d-none d-md-inline">View</span> Resume</a>
                 </div>
             </div><!--//media-body-->
             <!-- <img class="profile-image mb-3 mb-lg-0 ml-lg-5 mr-md-0" src="https://itwebservices.it/firma/avatar.png" alt=""> -->

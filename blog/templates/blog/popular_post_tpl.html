@@ -1,5 +1,5 @@
 <div class="popular-posts  p-2">
-    <h3 class="text-center border rounded border-secondary blog-tags-and-posts-menu">Popular posts</h3>
+    <h3 class="text-center border rounded border-secondary blog-tags-and-posts-menu">Популярные</h3>
     {% for post in posts %}
         <a href="{{ post.get_absolute_url }}">
             {% if post.photo %}

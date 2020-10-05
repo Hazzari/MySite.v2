@@ -14,7 +14,7 @@ class BlogView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Блог'
+        context['title'] = 'Все'
         return context
 
 
@@ -44,7 +44,7 @@ class PostByTagView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Записи по тегу: ' + str(Tag.objects.get(slug=self.kwargs['slug']))
+        context['title'] = 'Записи по тегу ' + str(Tag.objects.get(slug=self.kwargs['slug']))
         return context
 
 

@@ -6,9 +6,7 @@
 <head>
     <script src="{% static 'assets/plugins/jquery-3.4.1.min.js' %}"></script>
 
-    <title>
-        {% block title %}Мой сайт{% endblock %}
-    </title>
+    <title>{% block title %}Aleksan{% endblock %}</title>
 
     {% cache 20 meta %}
         {% include "inc/_meta.html" %}

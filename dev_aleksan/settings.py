@@ -73,7 +73,7 @@ else:
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = 'uploads'
 
 # Application definition
 
@@ -84,7 +84,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'debug_toolbar',
+    'debug_toolbar',
     'home_page.apps.HomePageConfig',
     'blog.apps.BlogConfig',
     'ckeditor',
@@ -92,12 +92,12 @@ INSTALLED_APPS = [
 
 ]
 
-# INTERNAL_IPS = [
-#     '127.0.0.1',
-# ]
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 MIDDLEWARE = [
-    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -162,15 +162,18 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR.parent / 'static'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'dev_aleksan/static'),
-]
-
 MEDIA_ROOT = BASE_DIR.parent / 'media'
+
+
+if settings.DEBUG:
+    STATICFILES_DIRS = [
+        BASE_DIR / 'dev_aleksan/static'
+    ]
+
 MEDIA_URL = '/media/'
+
 
 CKEDITOR_CONFIGS = {
     'default': {

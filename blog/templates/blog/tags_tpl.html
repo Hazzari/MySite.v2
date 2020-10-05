@@ -1,7 +1,14 @@
-<div class="tagline">
-    <h3 class="text-center text-center border rounded border-secondary blog-tags-and-posts-menu " >Теги</h3>
+{#<div class="tagline">#}
+{#    <h3 class="text-center text-center border rounded border-secondary blog-tags-and-posts-menu " >Теги</h3>#}
+{#    {% for tag in tags %}#}
+{#        <a class="btn btn-outline-primary mb-1 " href="{{ tag.get_absolute_url }}" role="button">{{ tag.title }}</a>#}
+{#    {% endfor %}#}
+{#</div>#}
+{##}
+<div class="popular-posts p-2">
+    <h3 class="text-center border rounded border-secondary blog-tags-and-posts-menu">Теги</h3>
     {% for tag in tags %}
+
         <a class="btn btn-outline-primary mb-1 " href="{{ tag.get_absolute_url }}" role="button">{{ tag.title }}</a>
     {% endfor %}
 </div>
-

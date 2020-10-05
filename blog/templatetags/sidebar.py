@@ -1,4 +1,5 @@
 from django import template
+from django.db.models import Count
 
 from blog.models import Post, Tag
 
@@ -19,5 +20,5 @@ def get_tags() -> dict:
     """
     показываем теги
     """
-    tags = Tag.objects.all()
+    tags = Tag.objects.annotate(count_posts=Count('posts')).filter(count_posts__gt=0)
     return {'tags': tags}

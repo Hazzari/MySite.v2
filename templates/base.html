@@ -5,7 +5,7 @@
 <html lang="ru">
 <head>
     <script src="{% static 'assets/plugins/jquery-3.4.1.min.js' %}"></script>
-
+    {% include "inc/_metrika.html" %}
     <title>{% block title %}Aleksan{% endblock %}</title>
 
     {% cache 20 meta %}

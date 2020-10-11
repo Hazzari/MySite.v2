@@ -8,15 +8,16 @@ USER = env('USER_HOST')
 PASSWORD = env('USER_PASSWORD')
 HOST = env('HOST')
 PORT = env('PORT')
+DIR_SITE = env('DIR_SITE')
 
 
 def pull():
     with fabric.Connection(HOST, port=23332) as c:
-
-        c.run('cd work/mysite/dev_aleksan'
-              '&& git pull && source venv/bin/activate'
-              '&& pip install -r requirements.txt'
-              '&& python3 manage.py migrate')
+        c.run(f'cd {DIR_SITE}'
+              '&& git pull'
+              '&& pipenv install'
+              '&& python3 manage.py migrate'
+              )
 
         c.sudo('service gunicorn restart', password=PASSWORD)
         c.sudo('service gunicorn status', password=PASSWORD)
